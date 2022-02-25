@@ -1,0 +1,658 @@
+/*------------------- BASIC SETUP -------------------*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Bitter', serif;
+    color: black;
+    font-size: 15px;
+}
+
+#Y {
+    font-size: 6rem;
+    padding: 0
+}
+
+#umz {
+    vertical-align: middle;
+}
+
+#topnav {
+    margin: 0 auto 2vh auto;
+    width: 90%;
+    text-align: center;
+    font-family: 'Bitter', serif;
+    padding: 10px 0;
+    border-top: 3px solid rgb(63, 63, 63);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.198);
+    font-size: 1.1rem;
+}
+
+#topnav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    display: inline-block;
+}
+
+#topnav a:hover {
+    color: #a5785e;
+}
+
+#topnav a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: #a5785e;
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 0;
+}
+
+#topnav a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.login {
+    padding-top: 2vh;
+    padding-right: 5vw;
+    margin-bottom: 1vh;
+}
+
+.login span {
+    transition: color 0.3s ease-in-out;
+}
+
+.login a {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0;
+    padding-top: 1vh;
+    transition: color 0.3s ease-in-out;
+    color: inherit;
+}
+
+.login a:hover {
+    color: #a5785e;
+}
+
+.sns {
+    padding-right: 5%;
+    padding-left: 20%;
+    /* background-color: yellow; */
+}
+
+.sns li {
+    list-style: none;
+}
+
+.sns a {
+    font-size: 2rem;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: color 0.4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+}
+
+h2 {
+    display: inline-block;
+    position: relative;
+    margin-top: 5vh;
+}
+
+h2:before,
+h2:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    top: 49%;
+    width: 20vw;
+}
+
+h2:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+h2:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+#bw {
+    cursor: pointer;
+}
+
+.switch img {
+    height: 40px;
+}
+
+.pop-up {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.609);
+    position: absolute;
+    color: white;
+    height: inherit;
+    width: inherit;
+    bottom: 0;
+    left: 0;
+    padding: 4vh 3vw;
+    font-family: 'Hina Mincho', serif;
+    outline: 3px solid rgb(255, 255, 255);
+    outline-offset: -15px;
+}
+
+.pop-up p {
+    text-align: left;
+    margin-top: 5vh;
+    font-size: 1.3rem;
+    font-weight: 200;
+    overflow-wrap: break-word;
+}
+
+.pop-up li {
+    font-size: 1.2rem;
+}
+
+textarea {
+    width: 100%;
+    height: 4vh;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+.btn10 {
+    background-color: yellow;
+}
+
+#chics,
+#honeyc,
+#butter,
+#nanban,
+#tamago,
+#nikujaga,
+#stew,
+#karateri,
+#tamagoc,
+#curry,
+#crispyc,
+#risotto,
+#carbonarra,
+#homec,
+#creamp,
+#thymec,
+#gbchic,
+#tomatostew,
+#chicm,
+#sweetc,
+#friedr,
+#oysterc,
+#soboro,
+#sesamec,
+#soursoup,
+#sweetsour,
+#gopasta,
+#stewc,
+#yangnyeomc,
+#snowc,
+#potatob,
+#potatobi,
+#stirc,
+#cinamoncookie,
+#pudding,
+#pancake,
+#coffeec,
+#spongeora,
+#spongechoc,
+#chocchip {
+    height: 50vh;
+    margin: 10px;
+    position: relative;
+}
+
+#fruittart,
+#orangep,
+#cheesecake,
+#afternoon,
+#choccake,
+#spongecaramel {
+    height: 70vh;
+    margin: 10px;
+    position: relative;
+}
+
+.top {
+    float: left;
+    padding: 0 5%;
+    background-color: black;
+    color: white;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+
+/* .l {
+    float: left;
+}
+
+.r {
+    background-color: blue;
+} */
+
+.bottom {
+    float: left;
+    font-size: 1.7rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0 5px;
+}
+
+.bottomright {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+#chics {
+    background-image: url("../img/breakfast/chics.jpg");
+    background-size: 110%;
+    background-position-y: 40%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+}
+
+#honeyc {
+    background-image: url("../img/breakfast/honeyc.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+#butter {
+    background-image: url("../img/breakfast/butter.jpg");
+    background-size: 100%;
+    background-position-y: 80%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+}
+
+#nanban {
+    background-image: url("../img/japanese/nanban.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+}
+
+#tamago {
+    background-image: url("../img/japanese/tamago.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+}
+
+#nikujaga {
+    background-image: url("../img/japanese/nikujaga.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 70%;
+    background-repeat: no-repeat;
+}
+
+#stew {
+    background-image: url("../img/japanese/stew.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+#karateri {
+    background-image: url("../img/japanese/karateri.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+#tamagoc {
+    background-image: url("../img/japanese/tamagoc.jpg");
+    background-size: 100%;
+    background-position-y: 80%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+#curry {
+    background-image: url("../img/japanese/curry.jpg");
+    background-size: 120%;
+    background-position-y: 80%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#crispyc {
+    background-image: url("../img/western/crispyc.jpg");
+    background-size: 100%;
+    background-position-y: 100%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#risotto {
+    background-image: url("../img/western/risotto.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#carbonarra {
+    background-image: url("../img/western/carbonarra.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#homec {
+    background-image: url("../img/western/homec.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+}
+
+#gbchic {
+    background-image: url("../img/western/gbchic.jpg");
+    background-size: 130%;
+    background-position-y: 100%;
+    background-position-x: 80%;
+    background-repeat: no-repeat;
+}
+
+#creamp {
+    background-image: url("../img/western/creamp.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#thymec {
+    background-image: url("../img/western/thymec.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#tomatostew {
+    background-image: url("../img/western/tomatostew.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#chicm {
+    background-image: url("../img/western/chicm.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#sweetc {
+    background-image: url("../img/chinese/sweetc.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#friedr {
+    background-image: url("../img/chinese/friedr.jpg");
+    background-size: 120%;
+    background-position-y: 60%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+}
+
+#oysterc {
+    background-image: url("../img/chinese/oysterc.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#soboro {
+    background-image: url("../img/chinese/soboro.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#sesamec {
+    background-image: url("../img/chinese/sesamec.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#soursoup {
+    background-image: url("../img/chinese/soursoup.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#sweetsour {
+    background-image: url("../img/chinese/sweetsour.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#gopasta {
+    background-image: url("../img/fusion/gopasta.jpg");
+    background-size: 100%;
+    background-position-y: 80%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#stewc {
+    background-image: url("../img/fusion/stewc.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#yangnyeomc {
+    background-image: url("../img/korean/yangnyeomc.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#snowc {
+    background-image: url("../img/korean/snowc.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#potatob {
+    background-image: url("../img/korean/potatob.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#potatobi {
+    background-image: url("../img/korean/potatobi.jpg");
+    background-size: 100%;
+    background-position-y: 40%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#stirc {
+    background-image: url("../img/korean/stirc.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#fruittart {
+    background-image: url("../img/sweetz/fruittart.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#orangep {
+    background-image: url("../img/sweetz/orangep.jpg");
+    background-size: 100%;
+    background-position-y: 40%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#cinamoncookie {
+    background-image: url("../img/sweetz/cinamoncookie.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#pudding {
+    background-image: url("../img/sweetz/pudding.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#pancake {
+    background-image: url("../img/sweetz/pancake.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#cheesecake {
+    background-image: url("../img/sweetz/cheesecake.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#afternoon {
+    background-image: url("../img/sweetz/afternoon.jpg");
+    background-size: 100%;
+    background-position-y: 100%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#coffeec {
+    background-image: url("../img/sweetz/coffeec.jpg");
+    background-size: 100%;
+    background-position-y: 60%;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+}
+
+#spongeora {
+    background-image: url("../img/sweetz/spongeora.jpg");
+    background-size: 100%;
+    background-position-y: 80%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#spongechoc {
+    background-image: url("../img/sweetz/spongechoc.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#choccake {
+    background-image: url("../img/sweetz/choccake.jpg");
+    background-size: 100%;
+    background-position-y: 55%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#spongecaramel {
+    background-image: url("../img/sweetz/spongecaramel.jpg");
+    background-size: 100%;
+    background-position-y: 70%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+#chocchip {
+    background-image: url("../img/sweetz/chocchip.jpg");
+    background-size: 100%;
+    background-position-y: 80%;
+    background-position-x: 60%;
+    background-repeat: no-repeat;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#copyright {
+    margin-top: 5vh;
+}

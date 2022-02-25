@@ -1,0 +1,151 @@
+html {
+    background: url("../img/base/spices.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+html:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.459)
+}
+
+.container {
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    /* text-align: center; */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    border-radius: 8px;
+    padding: 0
+}
+
+#slideshow {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+#slideshow img {
+    width: 100%;
+    height: 100%;
+}
+
+#slideshow>div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+table {
+    margin-top: 3vh;
+}
+
+#Y {
+    font-size: 5rem;
+    padding: 0;
+    font-family: 'Bitter', serif;
+}
+
+#umz {
+    font-size: 2rem;
+    vertical-align: middle;
+    font-family: 'Bitter', serif;
+}
+
+h4 {
+    margin-top: 2vh;
+}
+
+input {
+    font-size: 16px;
+    width: 100%;
+    margin-top: 2vh;
+    border: none;
+    outline: none;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    /*横幅の解釈をpadding, borderまでとする*/
+    background-color: transparent;
+}
+
+::placeholder {
+    color: black;
+}
+
+.text_underline {
+    width: 90%;
+    position: relative;
+    /*.text_underline::beforeの親要素*/
+    border-top: 3px solid #c2c2c2;
+    /*inputの下線*/
+}
+
+
+/*共通のstyle*/
+
+.text_underline::before,
+.text_underline::after {
+    position: absolute;
+    bottom: 0px;
+    /*中央配置*/
+    width: 0px;
+    /*アニメーションで0pxから50%に*/
+    height: 3px;
+    /*高さ*/
+    content: '';
+    background-color: #3be5ae;
+    /*アニメーションの色*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+
+/*中央から右へのアニメーション*/
+
+.text_underline::before {
+    left: 50%;
+    /*中央配置*/
+}
+
+
+/*中央から左へのアニメーション*/
+
+.text_underline::after {
+    right: 50%;
+    /*中央配置*/
+}
+
+input:focus+.text_underline::before,
+input:focus+.text_underline::after {
+    width: 50%;
+}
+
+button {
+    width: 10vw;
+    margin-top: 1vh;
+    background-color: #080710;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}

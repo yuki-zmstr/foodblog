@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2C4TNQG379"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-2C4TNQG379');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="icon" href="{{url_for('static', filename='img/favicon.ico')}}" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700;900&family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+
+    <!-- buttons -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/buttons.css')}}" />
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/e19efbd276.js" crossorigin="anonymous"></script>
+
+    <!-- containers -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" /> -->
+
+    <!-- custom styling -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+
+    <!-- queries -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/queries.css')}}" />
+
+    <!-- animations -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <title>yumz & sweetz</title>
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="padding-left: 10%; font-family: 'Bitter', serif; font-size: 3rem; font-weight: 900;">
+                <table>
+                    <td id="Y">Y</td>
+                    <td id="umz">umz & Sweetz</td>
+                </table>
+            </div>
+            <div class="col">
+                <div class="row login">
+                    {% if user.is_authenticated %}<span style="width: 100%; text-align: right">Welcome back: {{ user.first_name }}</span>
+                    <a class="nav-item nav-link" id="logout" href="/logout">Log Out</a> {%else%}
+                    <span style="width: 100%; text-align: right">Always open to advice.</span>
+                    <a class="nav-item nav-link" id="login" href="/login">Log In</a> {% endif %}
+                </div>
+                <div class="row sns">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100009808110440" target="_blank" class="fab fa-facebook-square"></a>
+                            <a href="https://www.linkedin.com/in/yukihide-takahashi-68366a1b7/" target="_blank" class="fab fa-linkedin"></a>
+                            <a href="https://www.instagram.com/yuki.zmstr/?hl=en" target="_blank" class="fab fa-instagram"></a>
+                            <a href="https://opentopopenended.wordpress.com/" target="_blank" class="fab fa-wordpress"></a>
+                            <a class="fas fa-adjust" id="bw"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="topnav">
+        <div class="row ">
+            <div class="col">
+                <a href="#breakfast">Breakfast</a>
+            </div>
+            <div class="col">
+                <a href="#japanese">Japanese</a>
+            </div>
+            <div class="col">
+                <a href="#western">Western</a>
+            </div>
+            <div class="col">
+                <a href="#chinese">Chinese</a>
+            </div>
+            <div class="col">
+                <a href="#ethnic">Ethnic</a>
+            </div>
+            <div class="col">
+                <a href="#fusion">Fusion</a>
+            </div>
+            <div class="col">
+                <a href="#korean">Korean</a>
+            </div>
+            <div class="col ">
+                <a href="#sweetz">Sweetz</a>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="width:90%; margin: auto">
+        <div class="container-fluid" id="breakfast" style="text-align: center ">
+            <h2>Breakfast</h2>
+            <div class="row">
+                <div class="col-lg-7 popup" id="chics" data-name="chics">
+                    <div class="row bottomright">
+                        <div class="row top r">Sandwich</div>
+                        <span class="row bottom">Chic & Cheese Sandwich</span>
+                    </div>
+                    <div class="pop-up" id="chics-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>鶏むね、レタス、チーズ。お好みでマスタード、照り焼きソースなど。ちょっと頑張ってみたい朝に。</p>
+                                <p>Chicken Breast, Lettuce, Cheese. Mustard/Teriyaki sauce. Bit of effort to start the day.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'chics'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-chics" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg popup" id="honeyc" data-name="honeyc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Toast</div>
+                        <span class="row bottom">Honey & Cheese Toast</span>
+                    </div>
+                    <div class="pop-up" id="honeyc-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>チーズと蜂蜜は相性抜群。</p>
+                                <p>Nothing beats sweet & savoury.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'honeyc'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-honeyc" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 popup" id="butter" data-name="butter">
+                    <div class="row bottomleft">
+                        <div class="row top l">Toast</div>
+                        <span class="row bottom">Toast w Homemade Butter</span>
+                    </div>
+                    <div class="pop-up" id="butter-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>自家製チーズソースをほっといたらいつの間にかバターに。食べても大丈夫（多分）。</p>
+                                <p>Left cheese sauce in a bottle for a week, guess what I got.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'butter'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-butter" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="japanese" style="text-align: center ">
+            <h2>Japanese</h2>
+            <div class="row">
+                <div class="col-lg-7" id="nanban">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Chicken w Nanban Sauce</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="tamago">
+                    <div class="row bottomleft">
+                        <div class="row top l">Egg</div>
+                        <span class="row bottom">Tamago-yaki</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="nikujaga">
+                    <div class="row bottomleft">
+                        <div class="row top l">Stew</div>
+                        <span class="row bottom">Niku-jaga</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="stew">
+                    <div class="row bottomleft">
+                        <div class="row top l">Stew</div>
+                        <span class="row bottom">Cream Stew</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="karateri">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Kara-age (Teriyaki)</span>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="tamagoc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Egg</div>
+                        <span class="row bottom">Tamago-yaki w Cheese</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="curry">
+                    <div class="row bottomleft">
+                        <div class="row top">Curry</div>
+                        <span class="row bottom">Japanese Curry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="western" style="text-align: center ">
+            <h2>Western</h2>
+            <div class="row">
+                <div class="col-lg-4" id="crispyc">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Crispy Chicken Fillet w Cheese</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="risotto">
+                    <div class="row bottomleft">
+                        <div class="row top l">Rice</div>
+                        <span class="row bottom">Risotto</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="carbonarra">
+                    <div class="row bottomleft">
+                        <div class="row top l">Pasta</div>
+                        <span class="row bottom">Carbonarra w Bacon</span>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="homec">
+                    <div class="row bottomright">
+                        <div class="row top l">Sauce</div>
+                        <span class="row bottom">Homemade Cheese Sauce</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="gbchic">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Garlic Butter Chicken</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="thymec">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Thyme-boiled Chicken</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="creamp">
+                    <div class="row bottomleft">
+                        <div class="row top l">Pasta</div>
+                        <span class="row bottom">Cream Pasta</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="chicm">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Crispy Chicken with Homemade Mustard Sauce</span>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="tomatostew">
+                    <div class="row bottomright">
+                        <div class="row top r">Stew</div>
+                        <span class="row bottom">Tomato Stew</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="chinese" style="text-align: center ">
+            <h2>Chinese</h2>
+            <div class="row">
+                <div class="col-lg-4" id="friedr">
+                    <div class="row bottomleft">
+                        <div class="row top l">Rice</div>
+                        <span class="row bottom">Fried Rice</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="sweetc">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Chicken in Sweet Sauce</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="oysterc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Chicken Breast in Oyster Sauce</span>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="soboro">
+                    <div class="row bottomright">
+                        <div class="row top l">Rice</div>
+                        <span class="row bottom">Rice with Minced Pork and Soboro Egg</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="sesamec">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Stripped Chicken in Spicy Bean Sauce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="soursoup">
+                    <div class="row bottomleft">
+                        <div class="row top r">Soup</div>
+                        <span class="row bottom">Sweet & Sour Soup</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="sweetsour">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Sweer & Sour Chicken</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="fusion" style="text-align: center ">
+            <h2>Fusion</h2>
+            <div class="row">
+                <div class="col-lg-4" id="gopasta">
+                    <div class="row bottomleft">
+                        <div class="row top l">Pasta</div>
+                        <span class="row bottom">Pasta in Garlic Oyster Sauce</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="stewc">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Fried Chicken with Japanese Stew</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="korean" style="text-align: center ">
+            <h2>Korean</h2>
+            <div class="row">
+                <div class="col-lg-7" id="yangnyeomc">
+                    <div class="row bottomright">
+                        <div class="row top r">Chicken</div>
+                        <span class="row bottom">Yangnyeom Chicken</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="snowc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Snow Cheese Chicken</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="potatob">
+                    <div class="row bottomleft">
+                        <div class="row top l">Potato</div>
+                        <span class="row bottom">Potato Balls with Cheese Filling</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="potatobi">
+                    <div class="row bottomleft">
+                        <div class="row top l">Potato</div>
+                        <span class="row bottom">(Inside)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="stirc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Chicken</div>
+                        <span class="row bottom">Chicken Breast Stir-fried in Gochujang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="sweetz" style="text-align: center ">
+            <h2>Sweetz</h2>
+            <div class="row">
+                <div class="col-lg-7" id="fruittart">
+                    <div class="row bottomleft">
+                        <div class="row top l">Tart</div>
+                        <span class="row bottom">Fruit Tart</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="orangep">
+                    <div class="row bottomleft">
+                        <div class="row top l">Condiments</div>
+                        <span class="row bottom">Orange Peel</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg" id="cinamoncookie">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cookies</div>
+                        <span class="row bottom">Cinamon Cookies</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="pudding">
+                    <div class="row bottomleft">
+                        <div class="row top l">Pudding</div>
+                        <span class="row bottom">Caramel Pudding</span>
+                    </div>
+                </div>
+
+                <div class="col-lg" id="pancake">
+                    <div class="row bottomright">
+                        <div class="row top r">Pancake</div>
+                        <span class="row bottom">Honey Pancakes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7" id="cheesecake">
+                    <div class="row bottomright">
+                        <div class="row top r">Cake</div>
+                        <span class="row bottom">New York Cheesecake</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="afternoon">
+                    <div class="row bottomright">
+                        <div class="row top r">Cake</div>
+                        <span class="row bottom">Afternoon Break</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="spongeora">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cake</div>
+                        <span class="row bottom">Sponge Cake with Orange Peels</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="coffeec">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cookies</div>
+                        <span class="row bottom">Coffee Cookies</span>
+                    </div>
+                </div>
+
+                <div class="col-lg" id="spongechoc">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cake</div>
+                        <span class="row bottom">Sponge Cake with Nutella Filling</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg" id="choccake">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cake</div>
+                        <span class="row bottom">Gâteau au chocolat</span>
+                    </div>
+                </div>
+                <div class="col-lg" id="spongecaramel">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cake</div>
+                        <span class="row bottom">Chocolate Sponge Cake with Caramel Sauce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4" id="chocchip">
+                    <div class="row bottomleft">
+                        <div class="row top l">Cookies</div>
+                        <span class="row bottom">Chocolate Chip Cookies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="copyright" style="text-align: center ">
+            &#169; 2021 Yukihide Takahashi
+            <!-- <div class="row ">
+                <a class="btn7 " href="#about ">Return to Top</a>
+            </div> -->
+        </div>
+
+    </div>
+</body>

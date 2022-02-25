@@ -1,0 +1,26 @@
+.button2 {
+    display: inline-block;
+    padding: 0.5em 2em;
+    border: 0.16em solid white;
+    margin: 0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    transition: all 0.3s;
+    margin-top: 2vh;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.button2:hover {
+    color: #818181;
+    border-color: #818181;
+}
+
+.button2:active {
+    color: #818181;
+    border-color: #818181;
+}
