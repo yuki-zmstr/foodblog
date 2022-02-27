@@ -11,12 +11,19 @@ import time
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
+def main():
+    time.sleep(0.1)
+    # comments = db.session.query(Comment).all()
+    print('redirecting to login page')
+    return redirect(url_for('auth.login'))
+
+
+@views.route('/home', methods=['GET', 'POST'])
 def home():
     time.sleep(0.1)
     comments = db.session.query(Comment).all()
-    print('doing something here')
+    print('redirecting to home page')
     return render_template("home.html", user=current_user, comments=comments)
-
 # @views.route('/processFoodInfo/<string:foodInfo>', methods=['POST'])
 # def processFoodID(foodInfo):
 #     print('making request here')
