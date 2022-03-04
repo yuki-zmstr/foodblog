@@ -503,44 +503,230 @@
         <div class="container-fluid" id="western" style="text-align: center ">
             <h2>Western</h2>
             <div class="row">
-                <div class="col-lg-4" id="crispyc">
+                <div class="col-lg-4 popup" id="crispyc" data-name="crispyc">
                     <div class="row bottomright">
                         <div class="row top r">Chicken</div>
                         <span class="row bottom">Crispy Chicken Fillet w Cheese</span>
                     </div>
+                    <div class="pop-up" id="crispyc-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>焦げ目最高。</p>
+                                <p>That burn.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'crispyc'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-crispyc" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg" id="risotto">
+                <div class="col-lg popup" id="risotto" data-name="risotto">
                     <div class="row bottomleft">
                         <div class="row top l">Rice</div>
                         <span class="row bottom">Risotto</span>
                     </div>
+                    <div class="pop-up" id="risotto-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>味変にチャレンジしたい。</p>
+                                <p>Quick dish. Full of potential.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'risotto'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-risotto" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4" id="carbonarra">
+                <div class="col-lg-4 popup" id="carbonarra" data-name="carbonarra">
                     <div class="row bottomleft">
                         <div class="row top l">Pasta</div>
                         <span class="row bottom">Carbonarra w Bacon</span>
                     </div>
+                    <div class="pop-up" id="carbonarra-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>味噌を使うと味が濃厚に。</p>
+                                <p>Never heard of adding miso but it works.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'carbonarra'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-carbonarra" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4" id="homec">
+                <div class="col-lg-4 popup" id="homec" data-name="homec">
                     <div class="row bottomright">
                         <div class="row top l">Sauce</div>
                         <span class="row bottom">Homemade Cheese Sauce</span>
                     </div>
+                    <div class="pop-up" id="homec-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>牛乳、にんにく、スライスチーズ、シナモン、マスタード、サワークリーム。</p>
+                                <p>Milk, garlic, sliced cheese, cinnamon, mustard, sour cream.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'homec'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-homec" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg" id="gbchic">
+                <div class="col-lg popup" id="gbchic" data-name="gbchic">
                     <div class="row bottomleft">
                         <div class="row top l">Chicken</div>
                         <span class="row bottom">Garlic Butter Chicken</span>
                     </div>
+                    <div class="pop-up" id="gbchic-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>にんにく x バターしか勝たん。</p>
+                                <p>Nothing beats butter & garlic.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'gbchic'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-gbchic" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg" id="thymec">
+                <div class="col-lg popup" id="thymec" data-name="thymec">
                     <div class="row bottomright">
                         <div class="row top r">Chicken</div>
                         <span class="row bottom">Thyme-boiled Chicken</span>
+                    </div>
+                    <div class="pop-up" id="thymec-popup">
+                        <div class="row">
+                            <div class="col">
+                                <p>野菜の味が染み込んだ鶏むね。タイムで香り高く。</p>
+                                <p>Boiled chicken breast with vegetables and thyme. Vegetable soup as a side product.</p>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <p style="margin: 2vh auto auto auto">コメント/Comments</p>
+                                </div>
+                                <div class="row" style="margin: 2vh 0 0 3vw">
+                                    <ul class="list-group list-group-flush">
+                                        <!-- filter by food id. -->
+                                        {% for comment in comments %} {% if comment.food_id == 'thymec'%}
+                                        <li class="row">
+                                            {{ comment.data }} &nbsp&nbsp&nbsp by {{ comment.user_name}} &nbsp&nbsp {% if user.first_name == 'Admin' %}
+                                            <button type="button" class="close" onClick="deleteComment({{ comment.id }})">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button> {%endif%}
+                                        </li>{%endif%} {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="submit" style="margin: 2vh auto auto auto">
+                                        <textarea name="comment" id="comment-thymec" class="form-control"></textarea>
+                                        <button type="submit" class="button2" onclick="sendFoodInfo()">Add Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg" id="creamp">
